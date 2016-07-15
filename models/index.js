@@ -1,4 +1,4 @@
 var mongoose = require("mongoose");
-mongoose.connect( process.env.MONGODB_URI || "https://warm-bastion-71807.herokuapp.com/");
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/personal-api");
 
 // module.exports.Campsite = require("./campsite.js.example");

@@ -1,7 +1,7 @@
 // require express and other modules
 var express = require('express'),
     app = express();
-
+var mongoose = require('mongoose');
 // parse incoming urlencoded form data
 // and populate the req.body object
 var bodyParser = require('body-parser');
@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -45,14 +45,17 @@ app.get('/', function homepage(req, res) {
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
-    woops_i_has_forgot_to_document_all_my_endpoints: true, // CHANGE ME ;)
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentation_url: "https://github.com/example-username/express_self_api/README.md", // CHANGE ME
-    base_url: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
+    documentation_url: "https://github.com/natapoli90/express-personal-api",
+    base_url: "https://warm-bastion-71807.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Json data about me"},
+      {method: "GET", path: "/api/gymworkouts", description: "Json data about best gymworkouts"},
+      {method: "GET", path: "/api/gymworkouts/:id", description: "Uses ID to find Json data about one gymworkout"},
+      {method: "POST", path: "/api/gymworkouts", description: "Uses a form on index.html to add one record to my gymworkouts database"},
+      {method: "PUT", path: "api/gymworkouts/:id", description: "Updates one gymworkout found by ID"},
+      {method: "DELETE", path: "/api/gymworkouts/:id", description: "Deletes one gymworkout, found by ID"}
     ]
   });
 });
