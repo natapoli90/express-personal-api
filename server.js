@@ -36,7 +36,15 @@ app.use(express.static('public'));
 app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
-
+//Show my profile
+app.get('/api/profile', function (req, res) {
+  db.Profile.find(function(err, data){
+  if (err) {
+    return console.log("Error: ", err);
+  }
+  res.json(data);
+  });
+});
 
 /*
  * JSON API Endpoints
