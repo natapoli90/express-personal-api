@@ -3,9 +3,10 @@ var mongoose = require('mongoose'),
 
 var GymWorkoutSchema = new Schema({
   name: String,
-  type: String,
-  duration: Number,
-  muscleGroup: Array,
+  photo: String,
+  week: Number,
+  level: String,
+  motivation: String,
 });
 
 var GymWorkout = mongoose.model('GymWorkout', GymWorkoutSchema);
