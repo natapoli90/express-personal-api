@@ -55,6 +55,18 @@ app.get('/api/gymworkouts', function (req, res) {
     res.json(gymworkouts);
   });
 });
+//Show one gymworkout by id
+app.get('/api/gymworkouts/:id', function (req, res) {
+  console.log ('show gymworkouts with this index: ', req.params);
+  db.Gymworkout.findOne({_id: req.params.id}, function(err, gymworkout) {
+    if (err) {
+      return console.log("Error: ", err);
+    }
+    res.json(gymworkout);
+  });
+});
+
+
 
 
 /*
