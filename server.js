@@ -65,9 +65,46 @@ app.get('/api/gymworkouts/:id', function (req, res) {
     res.json(gymworkout);
   });
 });
-
-
-
+// // Create new gymworkout
+// app.post('/api/gymworkouts', function (req, res) {
+//   console.log('Create gymworkout:', req.body);
+//   var newGymworkout = new db.Gymworkout(req.body);
+//   newGymworkout.save(function handleSave(err, savedGymworkout) {
+//     if (err) {
+//       return console.log("Error: ", err);
+//     }
+//     res.json(savedGymworkout);
+//   });
+// });
+//Update a trip
+// app.put('/api/gymworkouts/:id', function(req, res) {
+//   console.log('gymworkout to update:', req.params);
+//   var gymworkoutId = req.params.id;
+//   db.Gymworkout.findOneAndUpdate({_id: gymworkoutId}, function (err, updatedGymworkout) {
+//     if (err) {
+//       return console.log("Error: ", err);
+//     }
+//   updatedGymworkout = {
+//       name: req.body.name,
+//       photo: req.body.photo,
+//       week: req.body.week,
+//       level: req.body.level,
+//       motivation: req.body.motivation,
+//     };
+//   });
+//   res.json(updatedGymworkout);
+// });
+//Delete a gymworkout
+app.delete('/api/gymworkouts/:id', function (req, res) {
+  console.log('gymworkout to delete:', req.params);
+  var gymworkoutId = req.params.id;
+  db.Gymworkout.findOneAndRemove({_id: gymworkoutId}, function (err, deletedGymworkout) {
+    if (err) {
+      return console.log("Error: ", err);
+    }
+    res.json(deletedGymworkout);
+  });
+});
 
 /*
  * JSON API Endpoints
