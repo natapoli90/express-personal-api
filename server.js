@@ -1,10 +1,11 @@
 // require express and other modules
 var express = require('express'),
     app = express();
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 // parse incoming urlencoded form data
 // and populate the req.body object
 var bodyParser = require('body-parser');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // allow cross origin requests (optional)
@@ -18,8 +19,8 @@ app.use(function(req, res, next) {
 /************
  * DATABASE *
  ************/
-
 var db = require('./models');
+
 
 /**********
  * ROUTES *
@@ -54,6 +55,8 @@ app.get('/api/gymworkouts', function (req, res) {
     res.json(gymworkouts);
   });
 });
+
+
 /*
  * JSON API Endpoints
  */

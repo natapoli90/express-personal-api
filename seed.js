@@ -17,86 +17,87 @@ var gymworkouts_list = [
   photo: "/images/1blackcanary.jpg",
   week: 1,
   level: "Beginner",
-  motivation: "Today is your tomorrow.  A 1 hour workout is 4% of your day.",
+  motivation: "Today is your tomorrow.  A 1 hour workout is 4% of your day."
 },
 {
   name: "Cat Woman",
   photo: "/images/2catwoman.jpg",
   week: 2,
   level: "Beginner",
-  motivation: "First you feel like dying. Then you feel reborn.",
+  motivation: "First you feel like dying. Then you feel reborn."
 },
 {
   name: "Wonder Woman",
   photo: "/images/3wonderwoman.jpg",
   week: 3,
   level: "Intermediate",
-  motivation: "When you feel like quitting, think about why you started.",
+  motivation: "When you feel like quitting, think about why you started."
 },
 {
   name: "Super Girl",
   photo: "/images/4supergirl.jpg",
   week: 4,
   level: "Intermediate",
-  motivation: "Making excuses burns zero calories per hour. Clear your mind of can't.",
+  motivation: "Making excuses burns zero calories per hour. Clear your mind of can't."
 },
 {
   name: "Lara Croft",
   photo: "/images/5laracroft.jpg",
   week: 5,
   level: "Advanced",
-  motivation: "Fitness is like marriage. You can't cheat on it and expect it to work.",
+  motivation: "Fitness is like marriage. You can't cheat on it and expect it to work."
 },
 {
   name: "Mulan",
   photo: "/images/6mulan.jpg",
   week: 6,
   level: "Advanced",
-  motivation: "Don't stop when it hurts. Stop when you're done.",
+  motivation: "Don't stop when it hurts. Stop when you're done."
 },
 {
   name: "Lost Girl",
   photo: "/images/7lostgirl.jpg",
   week: 7,
   level: "Master",
-  motivation: "You will never know your limits unless you push yourself to them.",
+  motivation: "You will never know your limits unless you push yourself to them."
 },
 {
   name: "Black Widow",
   photo: "/images/8blackwidow.jpg",
   week: 8,
   level: "Master",
-  motivation: "Do it. Because They said you couldn't. Make them jealous.",
+  motivation: "Do it. Because They said you couldn't. Make them jealous."
 },
 ];
 
-db.Gymworkout.remove({}, function(err, gymworkouts) {
+
+// 
+// db.Profile.remove({}, function(err, data) {
+//   if (err) {
+//     console.log('Error occurred in remove', err);
+//   } else {
+//     console.log('removed all info');
+//
+//     db.Profile.create(profile, function(err, data){
+//       if (err) {
+//         return console.log('err', err);
+//       }
+//       console.log('created profile');
+//       process.exit();
+//     });
+//   }
+// });
+db.Gymworkout.remove({}, function(err, gym) {
   if (err) {
     console.log('Error occurred in remove', err);
   } else {
     console.log('removed all gymworkouts');
 
-    db.Gymworkout.create(trips_list, function(err, gymworkouts){
+    db.Gymworkout.create(gymworkouts_list, function(err, gym){
       if (err) {
         return console.log('err', err);
       }
-      console.log("created", gymworkouts.length, "gymworkouts");
-      process.exit();
-    });
-  }
-});
-
-db.Profile.remove({}, function(err, data) {
-  if (err) {
-    console.log('Error occurred in remove', err);
-  } else {
-    console.log('removed all info');
-
-    db.Profile.create(profile, function(err, data){
-      if (err) {
-        return console.log('err', err);
-      }
-      console.log("created", data.length, "profile");
+      console.log('created', Object.keys(gymworkouts_list).length, 'gymworkouts');
       process.exit();
     });
   }

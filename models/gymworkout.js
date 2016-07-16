@@ -1,14 +1,14 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
-var GymWorkoutSchema = new Schema({
+var GymworkoutSchema = new Schema({
   name: String,
   photo: String,
   week: Number,
   level: String,
-  motivation: String,
+  motivation: String
 });
 
-var GymWorkout = mongoose.model('GymWorkout', GymWorkoutSchema);
+var Gymworkout = mongoose.model('Gymworkout', GymworkoutSchema);
 
-module.exports = GymWorkout;
+module.exports = Gymworkout;
