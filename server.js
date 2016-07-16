@@ -46,14 +46,14 @@ app.get('/api/profile', function (req, res) {
   });
 });
 //Show all gymworkouts
-// app.get('/api/gymworkouts', function (req, res) {
-//   db.Gymworkout.find(function(err, gymworkouts){
-//     if (err) {
-//       return console.log("Error: ", err);
-//     }
-//     res.json(gymworkouts);
-//   });
-// });
+app.get('/api/gymworkouts', function (req, res) {
+  db.Gymworkout.find(function(err, gymworkouts){
+    if (err) {
+      return console.log("Error: ", err);
+    }
+    res.json(gymworkouts);
+  });
+});
 /*
  * JSON API Endpoints
  */
