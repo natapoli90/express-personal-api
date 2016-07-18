@@ -14,56 +14,56 @@ var profile = {
 var gymworkouts_list = [
 {
   name: "Black Canary",
-  photo: "/Users/Natalia/GA/week3/express-personal-api/public/images/1blackcanary.jpg",
+  photo: "/images/1blackcanary.jpg",
   week: 1,
   level: "Beginner",
   motivation: "Today is your tomorrow.  A 1 hour workout is 4% of your day."
 },
 {
   name: "Cat Woman",
-  photo: "/Users/Natalia/GA/week3/express-personal-api/public/images/2catwoman.jpg",
+  photo: "/images/2catwoman.jpg",
   week: 2,
   level: "Beginner",
   motivation: "First you feel like dying. Then you feel reborn."
 },
 {
   name: "Wonder Woman",
-  photo: "/Users/Natalia/GA/week3/express-personal-api/public/images/3wonderwoman.jpg",
+  photo: "/images/3wonderwoman.jpg",
   week: 3,
   level: "Intermediate",
   motivation: "When you feel like quitting, think about why you started."
 },
 {
   name: "Super Girl",
-  photo: "/Users/Natalia/GA/week3/express-personal-api/public/images/4supergirl.jpg",
+  photo: "/images/4supergirl.jpg",
   week: 4,
   level: "Intermediate",
   motivation: "Making excuses burns zero calories per hour. Clear your mind of can't."
 },
 {
   name: "Lara Croft",
-  photo: "/Users/Natalia/GA/week3/express-personal-api/public/images/5laracroft.jpg",
+  photo: "/images/5laracroft.jpg",
   week: 5,
   level: "Advanced",
   motivation: "Fitness is like marriage. You can't cheat on it and expect it to work."
 },
 {
   name: "Mulan",
-  photo: "/Users/Natalia/GA/week3/express-personal-api/public/images/6mulan.jpg",
+  photo: "/images/6mulan.jpg",
   week: 6,
   level: "Advanced",
   motivation: "Don't stop when it hurts. Stop when you're done."
 },
 {
   name: "Lost Girl",
-  photo: "/Users/Natalia/GA/week3/express-personal-api/public/images/7lostgirl.jpg",
+  photo: "/images/7lostgirl.jpg",
   week: 7,
   level: "Master",
   motivation: "You will never know your limits unless you push yourself to them."
 },
 {
   name: "Black Widow",
-  photo: "/Users/Natalia/GA/week3/express-personal-api/public/images/8blackwidow.jpg",
+  photo: "/images/8blackwidow.jpg",
   week: 8,
   level: "Master",
   motivation: "Do it. Because They said you couldn't. Make them jealous."
