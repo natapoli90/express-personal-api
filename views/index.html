@@ -4,27 +4,111 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Blank</title>
+    <title>Natalia's Gym Workouts API</title>
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/Users/Natalia/GA/week3/express-personal-api/public/styles/styles.css">
 
     <!-- VENDOR SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
-    <script src="/scripts/app.js"></script>
+    <script src="/Users/Natalia/GA/week3/express-personal-api/public/scripts/app.js"></script>
   </head>
   <body>
+    <div class="jumbotron">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <h1>Under Construction</h1>
-          <h4><a href="/api">Read My API Documentation</a></h4>
+          <div class="media">
+            <div class="media-left media-middle">
+              <a href="#">
+                <img class="media-object" src="/Users/Natalia/GA/week3/express-personal-api/public/images/WW.jpg" >
+              </a>
+            </div>
+            <div class="media-body">
+              <h2>Welcome to my page!</h2>
+              <p>...</p>
+                <h4><a href="/api">Read My API Documentation</a></h4>
+              <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+              ...
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="page-header">
+  <h1>Best Gym Workouts For Wonder Women</br><small>8 weeks.</br>8 amazing workouts.</br>Start today! 2 month from now you will thank yourself!</small></h1>
+</div>
+
+<!-- handlebars template -->
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+  <div id='gymworkoutTarget'>
+            <script id="gymworkouts-template" type="text/x-handlebars-template">
+    <div class="thumbnail">
+      {{#each gymworkouts}}
+      <img src={{photo}}>
+      <div class="caption">
+        <h3>{{name}}</h3>
+        <p>Week: {{week}}</p>
+        <p>Level: {{level}}</p>
+        <p>Motivation: {{motivation}}</p>
+        <!-- <p><a href="#" class="btn btn-primary" role="button">Edit</a> <a href="#" class="deleteBtn btn btn-default " role="button" data-id={{_id}}>Delete</a></p> -->
+        <button type="button" name="button" class="deleteBtn btn btn-danger " data-id={{_id}}>Delete</button>
+        <hr>
+            {{/each}}
+          </script>
         </div>
       </div>
     </div>
+    </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+<form class="form-inline" id="newGymworkoutForm">
+        <div class="form-group">
+          <h3>Do you have more workout ideas? Add them now!</h3>
+          <label for="namr">Workout name</label></br>
+          <input type="text" class="form-control" name="name" placeholder="Workout name">
+        </div>
+        </br>
+        <div class="form-group">
+          <label for="photo">Photo link</label></br>
+          <input type="text" class="form-control" name="photo" placeholder="URL">
+        </div>
+        </br>
+        <div class="form-group">
+          <label for="week">Week</label></br>
+          <input type="text" class="form-control" name="week" placeholder="Week">
+        </div>
+        </br>
+        <div class="form-group">
+          <label for="level">Level</label></br>
+          <input type="text" class="form-control" name="level" placeholder="Level of difficulty">
+        </div>
+        </br>
+        <div class="form-group">
+          <label for="motivation">Motivation</label></br>
+          <input type="text" class="form-control" name="motivation" placeholder="Motivational quote">
+        </div>
+      </br></br>
+        <button type="submit" class="btn btn-success">Add more</button>
+      </form>
+        </br>
+    </div>
+  </div>
+  </div>
+  </div>
+
   </body>
 </html>
