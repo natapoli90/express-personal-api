@@ -12,7 +12,7 @@ $(document).ready(function(){
 
   $.ajax ({
     method: 'GET',
-    url: 'http://localhost:3000/api/gymworkouts',
+    url: '/api/gymworkouts',
     success: handleSuccess,
     error: handleError
   });
@@ -21,7 +21,7 @@ $(document).ready(function(){
   e.preventDefault();
   $.ajax({
     method: 'POST',
-    url: 'http://localhost:3000/api/gymworkouts',
+    url: '/api/gymworkouts',
     data: $(this).serialize(),
     success: newGymworkoutSuccess,
     error: newGymworkoutError
@@ -31,7 +31,7 @@ $(document).ready(function(){
 $gymworkoutsList.on('click', '.deleteBtn', function() {
   $.ajax({
     method: 'DELETE',
-    url: 'http://localhost:3000/api/gymworkouts/'+$(this).attr('data-id'),
+    url: '/api/gymworkouts/'+$(this).attr('data-id'),
     success: deleteGymworkoutSuccess,
     error: deleteGymworkoutError,
   });
