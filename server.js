@@ -21,7 +21,6 @@ app.use(function(req, res, next) {
  ************/
 var db = require('./models');
 
-
 /**********
  * ROUTES *
  **********/
@@ -67,9 +66,7 @@ app.get('/api/gymworkouts/:id', function (req, res) {
 });
 // Create new gymworkout
 app.post('/api/gymworkouts', function (req, res) {
-
   var newGymworkout = new db.Gymworkout(req.body);
-
   newGymworkout.save(function handleSaved (err, savedGymworkout) {
     if (err) {
       return console.log("Error: ", err);
@@ -80,25 +77,26 @@ app.post('/api/gymworkouts', function (req, res) {
   });
 });
 
-
 //Update a trip
 app.put('/api/gymworkouts/:id', function(req, res) {
   console.log('gymworkout to update:', req.params);
   var gymworkoutId = req.params.id;
-  db.Gymworkout.findOneAndUpdate({_id: gymworkoutId}, function (err, changedGymworkout) {
+  db.Gymworkout.findOne({_id: gymworkoutId}, function (err, changedGymworkout) {
     if (err) {
       return console.log("Error: ", err);
     }
-  changedGymworkout= {
-      name: req.body.name,
-      photo: req.body.photo,
-      week: req.body.week,
-      level: req.body.level,
-      motivation: req.body.motivation,
-    };
-    res.json(changedGymworkout);
+    changedGymworkout.name = req.body.name;
+    changedGymworkout.photo = req.body.photo;
+    changedGymworkout.week = req.body.week;
+    changedGymworkout.level = req.body.level;
+    changedGymworkout.motivation = req.body.motivation;
+    changedGymworkout.save(function(err, savedWorkout) {
+      if (err) {
+        return console.log("Err", err);
+      }
+      res.json(savedWorkout);
+    });
   });
-
 });
 
 //Delete a gymworkout
